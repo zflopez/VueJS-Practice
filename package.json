@@ -1,0 +1,23 @@
+{
+  "name": "vuejs-practice",
+  "version": "1.0.0",
+  "description": "vuejs practice project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zflopez/VueJS-Practice.git"
+  },
+  "keywords": [
+    "vuejs"
+  ],
+  "author": "zflopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zflopez/VueJS-Practice/issues"
+  },
+  "homepage": "https://github.com/zflopez/VueJS-Practice#readme"
+}
