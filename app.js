@@ -25,27 +25,49 @@ new Vue({
 					id: 1,
 					name: 'TIFF',
 					description: 'Toronto International Film Festival',
-					date: '2015-09-10'
+					date: '2016-09-08'
 				}, 
 				{
 					id: 2,
-					name: 'The Martian Premiere',
-					description: 'The Martian comes to theatres.',
-					date: '2015-10-02'
+					name: 'Sundance Film Festival',
+					description: 'Sundance Film Festival',
+					date: '2017-01-19'
 				}, 
 				{
 					id: 3,
 					name: 'SXSW',
 					description: 'Music, film and interactive festival in Austin, TX.',
-					date: '2016-03-11'
+					date: '2017-03-10'
 				}
 			];
 
 			// Vue method similar to pushing data onto array
 			this.$set('events', events);
+
+
+			/* Requests data from endpoint
+
+			this.$http.get('api/events').success(function(events) {
+  				this.$set('events', events);
+			}).error(function(error) {
+  				console.log(error);
+			});
+
+			*/
+
+			/* If endpoint responds to POST requests
+
+			this.$http.post('api/events', this.event).success(function(response) {
+  				this.events.push(this.event);
+  				console.log("Event added!");
+			}).error(function(error) {
+  				console.log(error);
+			});
+			
+			*/
 		},
 
-		// Add new event to existing events array
+		// Adds new event to existing events array
 		addEvent: function() {
 			if(this.event.name) {
 				this.events.push(this.event);
@@ -53,13 +75,13 @@ new Vue({
 			}
 		},
 
+		// Deletes concrete event from events array
 		deleteEvent: function(index) {
 			if(confirm("Are you sure you want to delete this event?")) {
 				this.events.splice(index, 1);
-				//this.events.$remove(event);
+				//this.events.$remove(event);		// requires putting 'event' as parameter in v-on:click='deleteEvent()'
 			}
 		}
-
 
 	}
 });
